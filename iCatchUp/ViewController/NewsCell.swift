@@ -7,7 +7,18 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class NewsCell: UICollectionViewCell {
     
+    @IBOutlet var articleImage: UIImageView!
+    @IBOutlet var titleLabel: UILabel!
+    
+    func setValues(fromArticle article: Article) {
+        
+        titleLabel.text = article.title
+        if let url = URL(string: article.urlToImage) {
+            articleImage.af_setImage(withURL: url)
+        }
+    }
 }

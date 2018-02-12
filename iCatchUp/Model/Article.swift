@@ -10,7 +10,7 @@ import Foundation
 import SwiftyJSON
 
 class Article {
-    var source: Source
+    var source: Dictionary<String, Any>
     var author: String
     var title: String
     var description: String
@@ -19,7 +19,7 @@ class Article {
     var publishedAt: String
     
     init() {
-        source = Source()
+        source = ["id": (Any).self, "name": (Any).self,]
         author = ""
         title = ""
         description = ""
@@ -29,7 +29,7 @@ class Article {
     }
     
     init(from jsonArticle: JSON) {
-        source = jsonArticle["source"].object as! Source
+        source = jsonArticle["source"].dictionary!
         author = jsonArticle["author"].stringValue
         title = jsonArticle["tittle"].stringValue
         description = jsonArticle["description"].stringValue

@@ -15,6 +15,8 @@ private let reuseIdentifier = "Cell"
 
 class HomeNewsViewController: UICollectionViewController {
 
+    var articles: [Article] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,9 +24,10 @@ class HomeNewsViewController: UICollectionViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        //self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
+        updateArticles()
     }
 
     override func didReceiveMemoryWarning() {
@@ -60,15 +63,40 @@ extension HomeNewsViewController {
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 0
+        return articles.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! NewsCell
+        let article = articles[indexPath.row]
         // Configure the cell
-        
+        cell.setValues(fromArticle: article)
         return cell
+    }
+    
+    func updateArticles() {
+        
+        let parameters: [String:String] = [
+            "country": "us",
+            "apiKey":"fecf4feeffa64e4da682e7d268612ce5",
+        ]
+        
+        Alamofire.request(NewsApiService.articlesTopUrl, method: .get, parameters: parameters)
+        .responseJSON { (response) -> Void in
+            switch response.result {
+              case .success(let value):
+                let json = JSON(value)
+                print("\(json)")
+                // Update Articles Data Collection
+                self.articles = Article.from(jsonArticles: json["articles"].arrayValue)
+                // Refresh Collection View
+                self.collectionView?.reloadData()
+                self.collectionViewLayout.invalidateLayout()
+                    
+              case .failure(let error):
+                print("\(error)")
+            }
+        }
     }
 }
 

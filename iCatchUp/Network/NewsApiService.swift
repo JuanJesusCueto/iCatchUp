@@ -10,4 +10,5 @@ import Foundation
 
 class NewsApiService {
     static let sourcesUrl = "https://newsapi.org/v1/sources"
+    static let articlesTopUrl = "https://newsapi.org/v2/top-headlines"
 }
