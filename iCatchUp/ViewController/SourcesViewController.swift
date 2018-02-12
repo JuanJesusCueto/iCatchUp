@@ -14,7 +14,6 @@ private let reuseIdentifier = "Cell"
 
 class SourcesViewController: UICollectionViewController {
     var sources: [Source] = []
-    var i: Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
 

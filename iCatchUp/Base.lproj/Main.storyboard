@@ -63,6 +63,41 @@
             </objects>
             <point key="canvasLocation" x="1032.8" y="-27.436281859070466"/>
         </scene>
+        <!--Home-->
+        <scene sceneID="g0e-ez-VpM">
+            <objects>
+                <collectionViewController id="E2I-Np-A0Z" customClass="HomeNewsViewController" customModule="iCatchUp" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="KxM-SF-gy4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="IOZ-rZ-OdM">
+                            <size key="itemSize" width="375" height="216"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="bdx-1w-BEv" customClass="NewsCell" customModule="iCatchUp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="216"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="216"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </view>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="E2I-Np-A0Z" id="vC2-n4-vzi"/>
+                            <outlet property="delegate" destination="E2I-Np-A0Z" id="V2X-ss-Qdd"/>
+                        </connections>
+                    </collectionView>
+                    <tabBarItem key="tabBarItem" title="Home" image="home" selectedImage="home" id="NUn-kt-Oop"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PhB-G3-Z1O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1120.8" y="811.84407796101959"/>
+        </scene>
         <!--Sources-->
         <scene sceneID="pKj-v4-3HM">
             <objects>
@@ -160,10 +195,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UrE-Ml-lN3">
+                                <rect key="frame" x="314" y="64" width="25" height="25"/>
+                                <state key="normal" title="Favorite" image="heart"/>
+                                <connections>
+                                    <action selector="setFavorite:" destination="Z1Z-XP-36o" eventType="touchUpInside" id="2sd-5c-gmk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="vkX-9v-EGM" firstAttribute="top" secondItem="IOa-HW-O3m" secondAttribute="bottom" constant="46" id="0k9-Ig-b3B"/>
+                            <constraint firstItem="UrE-Ml-lN3" firstAttribute="top" secondItem="VDX-mb-CvP" secondAttribute="top" constant="44" id="5WR-SX-ECO"/>
                             <constraint firstItem="IOa-HW-O3m" firstAttribute="leading" secondItem="VDX-mb-CvP" secondAttribute="leading" constant="87" id="8kM-OM-CaK"/>
                             <constraint firstItem="ymS-z6-Qd7" firstAttribute="leading" secondItem="VDX-mb-CvP" secondAttribute="leading" constant="20" id="8v8-Yf-Qe5"/>
                             <constraint firstItem="vkX-9v-EGM" firstAttribute="trailing" secondItem="1cm-GN-MR7" secondAttribute="trailingMargin" id="CHn-Wc-pHg"/>
@@ -171,9 +214,11 @@
                             <constraint firstItem="HGb-PQ-APv" firstAttribute="top" secondItem="ymS-z6-Qd7" secondAttribute="bottom" constant="39" id="GX3-d9-Opf"/>
                             <constraint firstItem="ymS-z6-Qd7" firstAttribute="top" secondItem="vkX-9v-EGM" secondAttribute="bottom" constant="37" id="Jav-DI-7pu"/>
                             <constraint firstItem="vkX-9v-EGM" firstAttribute="leading" secondItem="HGb-PQ-APv" secondAttribute="leading" id="NG9-aH-AgX"/>
+                            <constraint firstItem="VDX-mb-CvP" firstAttribute="trailing" secondItem="UrE-Ml-lN3" secondAttribute="trailing" constant="36" id="PdA-w0-fQb"/>
                             <constraint firstItem="IOa-HW-O3m" firstAttribute="centerX" secondItem="vkX-9v-EGM" secondAttribute="centerX" id="PzB-5O-dDf"/>
                             <constraint firstItem="vkX-9v-EGM" firstAttribute="centerX" secondItem="ymS-z6-Qd7" secondAttribute="centerX" id="hs8-8s-785"/>
                             <constraint firstItem="IOa-HW-O3m" firstAttribute="top" secondItem="VDX-mb-CvP" secondAttribute="top" constant="78" id="kBn-Vy-QPk"/>
+                            <constraint firstItem="UrE-Ml-lN3" firstAttribute="leading" secondItem="IOa-HW-O3m" secondAttribute="trailing" constant="27" id="qZe-Y3-I2l"/>
                             <constraint firstItem="vkX-9v-EGM" firstAttribute="leading" secondItem="1cm-GN-MR7" secondAttribute="leadingMargin" id="w82-Ov-One"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VDX-mb-CvP"/>
@@ -181,6 +226,7 @@
                     <navigationItem key="navigationItem" title="Source Detail" id="KLT-Cc-rD4"/>
                     <connections>
                         <outlet property="descriptionLabel" destination="ymS-z6-Qd7" id="VzH-nS-JJd"/>
+                        <outlet property="favoriteButton" destination="UrE-Ml-lN3" id="OuZ-aj-5RA"/>
                         <outlet property="logoImageView" destination="IOa-HW-O3m" id="eWN-vv-dq7"/>
                         <outlet property="nameLabel" destination="vkX-9v-EGM" id="Ron-Fx-Ks8"/>
                         <outlet property="urlLabel" destination="HGb-PQ-APv" id="qcl-Vv-j97"/>
@@ -200,29 +246,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="qFH-7O-HLp"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" image="settings" id="fgW-Ie-XbI"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="settings" selectedImage="settings" id="fgW-Ie-XbI"/>
                     <navigationItem key="navigationItem" title="Settings" id="xk9-Eg-HwV"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wa1-kc-FtS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2761" y="812"/>
-        </scene>
-        <!--Home-->
-        <scene sceneID="Na0-jG-IBc">
-            <objects>
-                <viewController id="nc3-bi-MSM" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ivv-ZO-4EU">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <viewLayoutGuide key="safeArea" id="mZE-JT-lRb"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="home" id="QlX-IV-FcA"/>
-                    <navigationItem key="navigationItem" title="Home" id="DyN-e4-xTb"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="thR-mb-hd3" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1121" y="812"/>
         </scene>
         <!--CatchUp-->
         <scene sceneID="OeN-jW-n0C">
@@ -237,7 +266,7 @@
                         <color key="selectedImageTintColor" red="0.98824185129999997" green="0.98822349310000002" blue="0.98823589089999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>
                     <connections>
-                        <segue destination="nc3-bi-MSM" kind="relationship" relationship="viewControllers" id="6Ud-yb-gU2"/>
+                        <segue destination="E2I-Np-A0Z" kind="relationship" relationship="viewControllers" id="AfK-vS-NV1"/>
                         <segue destination="BRY-VZ-wYW" kind="relationship" relationship="viewControllers" id="dGv-GW-KWe"/>
                         <segue destination="d00-yq-zZk" kind="relationship" relationship="viewControllers" id="iij-Fo-gFG"/>
                     </connections>
@@ -271,6 +300,7 @@
     </scenes>
     <resources>
         <image name="Sources" width="25" height="25"/>
+        <image name="heart" width="25" height="25"/>
         <image name="home" width="25" height="25"/>
         <image name="launch-icon" width="1024" height="1024"/>
         <image name="no-image-available" width="307" height="224"/>

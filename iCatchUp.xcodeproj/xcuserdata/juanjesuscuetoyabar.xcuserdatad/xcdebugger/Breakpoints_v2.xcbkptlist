@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iCatchUp/ViewController/SourceDetailViewController.swift"
-            timestampString = "539480921.105476"
+            timestampString = "540072562.0381401"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
             landmarkName = "setViewValues()"
             landmarkType = "7">
          </BreakpointContent>
