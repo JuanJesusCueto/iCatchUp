@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iCatchUp/ViewController/HomeNewsViewController.swift"
-            timestampString = "540151358.5961519"
+            timestampString = "540195844.952291"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
             landmarkName = "updateArticles()"
             landmarkType = "7">
          </BreakpointContent>

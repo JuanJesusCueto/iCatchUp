@@ -31,7 +31,7 @@ class Article {
     init(from jsonArticle: JSON) {
         source = jsonArticle["source"].dictionary!
         author = jsonArticle["author"].stringValue
-        title = jsonArticle["tittle"].stringValue
+        title = jsonArticle["title"].stringValue
         description = jsonArticle["description"].stringValue
         url = jsonArticle["url"].stringValue
         urlToImage = jsonArticle["urlToImage"].stringValue

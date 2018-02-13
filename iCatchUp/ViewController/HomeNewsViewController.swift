@@ -30,6 +30,9 @@ class HomeNewsViewController: UICollectionViewController {
         updateArticles()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        updateArticles()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -76,26 +79,49 @@ extension HomeNewsViewController {
     
     func updateArticles() {
         
-        let parameters: [String:String] = [
-            "country": "us",
+        var parameters: [String:String] = [
+            "sources": "bbc-news",
             "apiKey":"fecf4feeffa64e4da682e7d268612ce5",
-        ]
+            ]
         
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let moc = appDelegate.dataController.managedObjectContext
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "News")
+        do {
+            let results = try moc.fetch(request)
+            if let constants = results as? [News] {
+                if constants.count > 0 {
+                for i in 0..<constants.count {
+                    //Update the value of sources
+                    parameters.updateValue(constants[i].name!, forKey: "sources")
+                    articlesRequest(parameters: parameters)
+                }
+            } else {
+                   articlesRequest(parameters: parameters)
+              }
+          }
+        } catch {
+            print("Could not fetch")
+        }
+    }
+    
+    func articlesRequest(parameters: [String: String]) {
         Alamofire.request(NewsApiService.articlesTopUrl, method: .get, parameters: parameters)
-        .responseJSON { (response) -> Void in
-            switch response.result {
-              case .success(let value):
-                let json = JSON(value)
-                print("\(json)")
-                // Update Articles Data Collection
-                self.articles = Article.from(jsonArticles: json["articles"].arrayValue)
-                // Refresh Collection View
-                self.collectionView?.reloadData()
-                self.collectionViewLayout.invalidateLayout()
+            .responseJSON { (response) -> Void in
+                switch response.result {
+                case .success(let value):
+                    let json = JSON(value)
+                    print("\(json)")
+                    // Update Articles Data Collection
+                    self.articles.append(contentsOf: Article.from(jsonArticles: json["articles"].arrayValue))
+                    // Refresh Collection View
+                    self.collectionView?.reloadData()
+                    self.collectionViewLayout.invalidateLayout()
                     
-              case .failure(let error):
-                print("\(error)")
-            }
+                case .failure(let error):
+                    print("\(error)")
+                }
         }
     }
 }
