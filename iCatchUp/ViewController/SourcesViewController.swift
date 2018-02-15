@@ -45,8 +45,14 @@ class SourcesViewController: UICollectionViewController {
     // MARK: - Navigation
 
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! SourceCell
         let viewController = storyboard?.instantiateViewController(withIdentifier: "SourceDetailViewController") as! SourceDetailViewController
         viewController.source = sources[indexPath.row]
+        if cell.favoriteButton.currentImage == #imageLiteral(resourceName: "highlitedHeart") {
+            viewController.isFavorite = true
+        } else {
+            viewController.isFavorite = false
+        }
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     

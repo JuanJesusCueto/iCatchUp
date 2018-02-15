@@ -16,7 +16,7 @@ class SourceDetailViewController: UIViewController {
     @IBOutlet var urlLabel: UILabel!
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var favoriteButton: UIButton!
-    var isFavorite = false
+    var isFavorite: Bool!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,6 +24,12 @@ class SourceDetailViewController: UIViewController {
         urlLabel.isUserInteractionEnabled = true
         urlLabel.addGestureRecognizer(tap)
         // Do any additional setup after loading the view.
+        
+        if isFavorite == true {
+            favoriteButton.setImage(#imageLiteral(resourceName: "highlitedHeart"), for: .normal)
+        } else {
+            favoriteButton.setImage(#imageLiteral(resourceName: "heart"), for: .normal)
+        }
         setViewValues()
     }
 

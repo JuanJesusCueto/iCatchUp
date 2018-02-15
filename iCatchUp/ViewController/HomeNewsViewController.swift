@@ -32,7 +32,7 @@ class HomeNewsViewController: UICollectionViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        articles = []
+        articles.removeAll()
         updateArticles()
     }
     override func didReceiveMemoryWarning() {
@@ -82,7 +82,8 @@ extension HomeNewsViewController {
     }
     
     func updateArticles() {
-        
+        // This var will determinate whether the articles are empty or not in this function
+        var validate = 0
         var parameters: [String:String] = [
             "sources": "bbc-news",
             "apiKey":"fecf4feeffa64e4da682e7d268612ce5",
@@ -92,17 +93,19 @@ extension HomeNewsViewController {
         if let tabBarController = self.storyboard?.instantiateViewController(withIdentifier: "TabBarViewController") as? TabBarViewController {
             newsValues = tabBarController.getParameters()
         }
-                if newsValues.count > 0 {
-                for i in 0..<newsValues.count {
-                    //Update the value of sources if they are favorites
-                    if newsValues[i].isFavorite == true {
-                    parameters.updateValue(newsValues[i].name!, forKey: "sources")
-                    articlesRequest(parameters: parameters)
-                    }
-                }
-            } else {
-                   articlesRequest(parameters: parameters)
-              }
+        if newsValues.count > 0 {
+          for i in 0..<newsValues.count {
+            //Update the value of sources if they are favorites
+            if newsValues[i].isFavorite == true {
+            parameters.updateValue(newsValues[i].name!, forKey: "sources")
+            articlesRequest(parameters: parameters)
+                validate+=1
+          }
+        }
+      }
+        if (validate == 0) {
+          articlesRequest(parameters: parameters)
+      }
     }
     
     func articlesRequest(parameters: [String: String]) {
