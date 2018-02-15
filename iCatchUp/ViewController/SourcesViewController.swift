@@ -14,6 +14,7 @@ private let reuseIdentifier = "Cell"
 
 class SourcesViewController: UICollectionViewController {
     var sources: [Source] = []
+    var news: [News] = []
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,9 +25,17 @@ class SourcesViewController: UICollectionViewController {
         //self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
-        updateSources()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateSources()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        updateSources()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -106,18 +115,22 @@ extension SourcesViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! SourceCell
         let source = sources[indexPath.row]
         // Configure the cell
-        cell.setValues(fromSource: source)
+        cell.setValues(fromSource: source, fromNews: news)
         return cell
     }
-
+ // Get all the available sources from newsApi
     func updateSources() {
+        //Update News Values
+        if let tabBarController = self.storyboard?.instantiateViewController(withIdentifier: "TabBarViewController") as? TabBarViewController {
+            news = tabBarController.getParameters()
+        }
+        
         Alamofire.request(NewsApiService.sourcesUrl)
             .responseJSON(completionHandler: {
                 response in
                 switch response.result {
                 case .success(let value):
                     let json = JSON(value)
-                    print("\(json)")
                     // Update Sources Data Collection
                     self.sources = Source.from(jsonSources: json["sources"].arrayValue)
                     // Refresh Collection View

@@ -29,6 +29,7 @@
 		DF2BFD842030E64100E3AB0C /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2BFD832030E64100E3AB0C /* Article.swift */; };
 		DF5ADD6320329B8B001F33E5 /* ArticleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5ADD6220329B8B001F33E5 /* ArticleDetailViewController.swift */; };
 		DF840D732026477D008BC457 /* SourceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF840D722026477D008BC457 /* SourceDetailViewController.swift */; };
+		DFD9261E203389F700E069FD /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD9261D203389F700E069FD /* TabBarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -71,6 +72,7 @@
 		DF2BFD832030E64100E3AB0C /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		DF5ADD6220329B8B001F33E5 /* ArticleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailViewController.swift; sourceTree = "<group>"; };
 		DF840D722026477D008BC457 /* SourceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceDetailViewController.swift; sourceTree = "<group>"; };
+		DFD9261D203389F700E069FD /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 				DF2BFD7F2030DB6C00E3AB0C /* HomeNewsViewController.swift */,
 				DF2BFD812030DB9300E3AB0C /* NewsCell.swift */,
 				DF5ADD6220329B8B001F33E5 /* ArticleDetailViewController.swift */,
+				DFD9261D203389F700E069FD /* TabBarViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				BE796D101FB9D44000A85234 /* SourcesViewController.swift in Sources */,
 				BE3039F01FB5FEF70006CA59 /* iCatchUp.xcdatamodeld in Sources */,
 				BE3039E81FB5FEF70006CA59 /* AppDelegate.swift in Sources */,
+				DFD9261E203389F700E069FD /* TabBarViewController.swift in Sources */,
 				DF5ADD6320329B8B001F33E5 /* ArticleDetailViewController.swift in Sources */,
 				DF2BFD822030DB9300E3AB0C /* NewsCell.swift in Sources */,
 				DF2BFD7E2030ABA700E3AB0C /* News+CoreDataProperties.swift in Sources */,

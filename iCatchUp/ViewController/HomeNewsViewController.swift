@@ -16,6 +16,7 @@ private let reuseIdentifier = "Cell"
 class HomeNewsViewController: UICollectionViewController {
 
     var articles: [Article] = []
+    var newsValues: [News] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,10 +28,11 @@ class HomeNewsViewController: UICollectionViewController {
         //self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
-        updateArticles()
+       // updateArticles()
     }
 
     override func viewWillAppear(_ animated: Bool) {
+        articles = []
         updateArticles()
     }
     override func didReceiveMemoryWarning() {
@@ -41,9 +43,11 @@ class HomeNewsViewController: UICollectionViewController {
     
     // MARK: - Navigation
 
-   /* override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        <#code#>
-    }*/
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let viewController = storyboard?.instantiateViewController(withIdentifier: "ArticleDetailViewController") as! ArticleDetailViewController
+        viewController.article = articles[indexPath.row]
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
     /*// In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using [segue destinationViewController].
@@ -84,26 +88,21 @@ extension HomeNewsViewController {
             "apiKey":"fecf4feeffa64e4da682e7d268612ce5",
             ]
         
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let moc = appDelegate.dataController.managedObjectContext
-        
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "News")
-        do {
-            let results = try moc.fetch(request)
-            if let constants = results as? [News] {
-                if constants.count > 0 {
-                for i in 0..<constants.count {
-                    //Update the value of sources
-                    parameters.updateValue(constants[i].name!, forKey: "sources")
+        //Update the velues from TabBarController
+        if let tabBarController = self.storyboard?.instantiateViewController(withIdentifier: "TabBarViewController") as? TabBarViewController {
+            newsValues = tabBarController.getParameters()
+        }
+                if newsValues.count > 0 {
+                for i in 0..<newsValues.count {
+                    //Update the value of sources if they are favorites
+                    if newsValues[i].isFavorite == true {
+                    parameters.updateValue(newsValues[i].name!, forKey: "sources")
                     articlesRequest(parameters: parameters)
+                    }
                 }
             } else {
                    articlesRequest(parameters: parameters)
               }
-          }
-        } catch {
-            print("Could not fetch")
-        }
     }
     
     func articlesRequest(parameters: [String: String]) {
