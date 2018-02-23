@@ -11,9 +11,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Arial.ttf">
-            <string>ArialMT</string>
-        </array>
         <array key="TimesNewRomanBold.ttf">
             <string>TimesNewRomanPS-BoldMT</string>
         </array>
@@ -27,36 +24,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="96Q-F5-QPf">
-                                <rect key="frame" x="16" y="575" width="343" height="30"/>
+                            <imageView userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="books" translatesAutoresizingMaskIntoConstraints="NO" id="Zjc-kZ-Mgr">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YbJ-IU-TlB">
+                                <rect key="frame" x="164" y="602" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Start"/>
                                 <connections>
-                                    <segue destination="rJZ-be-lFA" kind="show" identifier="toNews" id="Wb7-Hu-EgB"/>
+                                    <segue destination="rJZ-be-lFA" kind="show" id="Jwe-LF-Fjk"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This app uses news Api in order to take all the available sources in internet and show them with a collectionView." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z2b-FM-zw3">
-                                <rect key="frame" x="16" y="511.5" width="343" height="23.5"/>
-                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="21"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="launch-icon" translatesAutoresizingMaskIntoConstraints="NO" id="gDR-p8-Rf2">
-                                <rect key="frame" x="20" y="134" width="335" height="337.5"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="z2b-FM-zw3" secondAttribute="trailing" constant="16" id="0vg-Kp-Hbh"/>
-                            <constraint firstItem="z2b-FM-zw3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="3iL-03-mrt"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="96Q-F5-QPf" secondAttribute="bottom" constant="62" id="OJQ-rx-cSo"/>
-                            <constraint firstItem="gDR-p8-Rf2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="70" id="PDx-O1-H65"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gDR-p8-Rf2" secondAttribute="trailing" constant="20" id="PEG-he-kvv"/>
-                            <constraint firstItem="gDR-p8-Rf2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="TAR-N5-ry4"/>
-                            <constraint firstItem="96Q-F5-QPf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="TwU-e4-UFk"/>
-                            <constraint firstItem="96Q-F5-QPf" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="XJP-Bl-h2r"/>
-                            <constraint firstItem="z2b-FM-zw3" firstAttribute="top" secondItem="gDR-p8-Rf2" secondAttribute="bottom" constant="40" id="bV0-BM-riA"/>
-                            <constraint firstItem="96Q-F5-QPf" firstAttribute="top" secondItem="z2b-FM-zw3" secondAttribute="bottom" constant="40" id="fbg-is-45X"/>
-                            <constraint firstItem="z2b-FM-zw3" firstAttribute="top" secondItem="gDR-p8-Rf2" secondAttribute="bottom" constant="40" id="u1b-28-0cf"/>
+                            <constraint firstItem="Zjc-kZ-Mgr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="IMc-VW-rkL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Zjc-kZ-Mgr" secondAttribute="bottom" id="Rmy-ct-NJT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Zjc-kZ-Mgr" secondAttribute="trailing" id="avZ-m9-1Za"/>
+                            <constraint firstItem="Zjc-kZ-Mgr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="yyO-8D-ur5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -137,37 +122,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OO5-bj-0QE">
-                            <size key="itemSize" width="179" height="192"/>
+                            <size key="itemSize" width="110" height="190"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="3tw-El-kay" customClass="SourceCell" customModule="iCatchUp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="180" height="190"/>
+                                <rect key="frame" x="0.0" y="0.0" width="110" height="190"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="180" height="190"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="110" height="190"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="no-image-available" translatesAutoresizingMaskIntoConstraints="NO" id="zf2-AA-VaD">
-                                            <rect key="frame" x="0.0" y="0.0" width="180" height="150"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="no-image-available" translatesAutoresizingMaskIntoConstraints="NO" id="zf2-AA-VaD">
+                                            <rect key="frame" x="0.0" y="0.0" width="110" height="150"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="150" id="EBa-L9-JQ2"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PCi-9m-GPt">
-                                            <rect key="frame" x="0.0" y="162" width="110" height="20"/>
+                                            <rect key="frame" x="0.0" y="162" width="80" height="20"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="20" id="NnE-kz-05v"/>
-                                                <constraint firstAttribute="width" constant="110" id="mN8-IP-lQw"/>
+                                                <constraint firstAttribute="width" constant="80" id="mN8-IP-lQw"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="11"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eDg-Tr-dij">
-                                            <rect key="frame" x="146" y="162" width="26" height="20"/>
+                                            <rect key="frame" x="90" y="162" width="20" height="20"/>
                                             <state key="normal" image="heart"/>
                                         </button>
                                     </subviews>
@@ -176,15 +161,15 @@
                                 <constraints>
                                     <constraint firstItem="zf2-AA-VaD" firstAttribute="leading" secondItem="3tw-El-kay" secondAttribute="leading" id="1wU-e1-gW5"/>
                                     <constraint firstItem="PCi-9m-GPt" firstAttribute="leading" secondItem="3tw-El-kay" secondAttribute="leading" id="RhG-jI-b7f"/>
-                                    <constraint firstItem="eDg-Tr-dij" firstAttribute="leading" secondItem="PCi-9m-GPt" secondAttribute="trailing" constant="36" id="jHw-98-N77"/>
+                                    <constraint firstItem="eDg-Tr-dij" firstAttribute="leading" secondItem="PCi-9m-GPt" secondAttribute="trailing" constant="10" id="jHw-98-N77"/>
                                     <constraint firstItem="zf2-AA-VaD" firstAttribute="top" secondItem="3tw-El-kay" secondAttribute="top" id="kJh-Hd-lUr"/>
                                     <constraint firstAttribute="trailing" secondItem="zf2-AA-VaD" secondAttribute="trailing" id="qjI-5U-kKk"/>
                                     <constraint firstAttribute="bottom" secondItem="eDg-Tr-dij" secondAttribute="bottom" constant="8" id="qxY-w5-u6a"/>
                                     <constraint firstItem="PCi-9m-GPt" firstAttribute="top" secondItem="zf2-AA-VaD" secondAttribute="bottom" constant="12" id="sJh-UY-PW4"/>
                                     <constraint firstItem="eDg-Tr-dij" firstAttribute="top" secondItem="zf2-AA-VaD" secondAttribute="bottom" constant="12" id="ud9-bk-00F"/>
-                                    <constraint firstAttribute="trailing" secondItem="eDg-Tr-dij" secondAttribute="trailing" constant="8" id="x8C-U9-Bjx"/>
+                                    <constraint firstAttribute="trailing" secondItem="eDg-Tr-dij" secondAttribute="trailing" id="x8C-U9-Bjx"/>
                                 </constraints>
-                                <size key="customSize" width="180" height="190"/>
+                                <size key="customSize" width="110" height="190"/>
                                 <connections>
                                     <outlet property="favoriteButton" destination="eDg-Tr-dij" id="pr6-8P-NBT"/>
                                     <outlet property="logoImageView" destination="zf2-AA-VaD" id="HGC-Qn-CiB"/>
@@ -440,9 +425,9 @@
     </scenes>
     <resources>
         <image name="Sources" width="25" height="25"/>
+        <image name="books" width="497" height="750"/>
         <image name="heart" width="25" height="25"/>
         <image name="home" width="25" height="25"/>
-        <image name="launch-icon" width="1024" height="1024"/>
         <image name="no-image-available" width="307" height="224"/>
         <image name="settings" width="25" height="25"/>
     </resources>

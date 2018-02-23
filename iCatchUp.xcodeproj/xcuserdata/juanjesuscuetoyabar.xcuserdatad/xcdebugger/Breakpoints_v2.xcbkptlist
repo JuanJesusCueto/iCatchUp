@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iCatchUp/ViewController/SourcesViewController.swift"
-            timestampString = "540410845.815407"
+            timestampString = "541019371.994626"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "51"
@@ -26,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iCatchUp/ViewController/SourceDetailViewController.swift"
-            timestampString = "540410845.81556"
+            timestampString = "540441985.242155"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "41"
             endingLineNumber = "41"
-            landmarkName = "setViewValues()"
+            landmarkName = "tapFunction(sender:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
