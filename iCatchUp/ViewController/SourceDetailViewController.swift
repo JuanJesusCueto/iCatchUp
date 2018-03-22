@@ -8,9 +8,14 @@
 
 import UIKit
 
+protocol SourceDelegate {
+    func updateSources()
+}
+
 class SourceDetailViewController: UIViewController {
 
     var source: Source!
+    var delegate: SourceDelegate?
     @IBOutlet var logoImageView: UIImageView!
     @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet var urlLabel: UILabel!
@@ -57,20 +62,21 @@ class SourceDetailViewController: UIViewController {
         
         let alertController: UIAlertController!
         let defaultAction: UIAlertAction!
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         if isFavorite == false {
             isFavorite = true
             alertController = UIAlertController(title: "Add Favorite", message: "The Source " + source.name + " has been added to favorites", preferredStyle: .alert)
             defaultAction = UIAlertAction(title: "OK", style: .default, handler: { (UIAlertAction) in
-                let appDelegate = UIApplication.shared.delegate as! AppDelegate
                 appDelegate.dataController.saveSource(source: self.source, isFavorite: self.isFavorite)
+                self.delegate?.updateSources()
             })
             favoriteButton.setImage(#imageLiteral(resourceName: "highlitedHeart"), for: .normal)
         } else {
             isFavorite = false
             alertController = UIAlertController(title: "Add Favorite", message: "The Source " + source.name + " has been removed of favorites", preferredStyle: .alert)
             defaultAction = UIAlertAction(title: "OK", style: .default, handler: { (UIAlertAction) in
-                let appDelegate = UIApplication.shared.delegate as! AppDelegate
                 appDelegate.dataController.saveSource(source: self.source, isFavorite: self.isFavorite)
+                self.delegate?.updateSources()
             })
             favoriteButton.setImage(#imageLiteral(resourceName: "heart"), for: .normal)
         }

@@ -12,7 +12,7 @@ import SwiftyJSON
 
 private let reuseIdentifier = "Cell"
 
-class SourcesViewController: UICollectionViewController {
+class SourcesViewController: UICollectionViewController, SourceDelegate {
     var sources: [Source] = []
     var news: [News] = []
     override func viewDidLoad() {
@@ -25,9 +25,10 @@ class SourcesViewController: UICollectionViewController {
         //self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
+        updateSources()
     }
 
-    override func viewWillAppear(_ animated: Bool) {
+   /* override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         updateSources()
     }
@@ -35,7 +36,7 @@ class SourcesViewController: UICollectionViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         updateSources()
-    }
+    }*/
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -53,6 +54,7 @@ class SourcesViewController: UICollectionViewController {
         } else {
             viewController.isFavorite = false
         }
+        viewController.delegate = self
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     

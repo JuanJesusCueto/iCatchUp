@@ -22,6 +22,7 @@
 		BE796D101FB9D44000A85234 /* SourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE796D0F1FB9D44000A85234 /* SourcesViewController.swift */; };
 		BE796D121FB9D9A200A85234 /* SourceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE796D111FB9D9A200A85234 /* SourceCell.swift */; };
 		DF1C9220202FEF3300385521 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1C921F202FEF3300385521 /* DataController.swift */; };
+		DF2BC63220439B3E001E45CE /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2BC63120439B3E001E45CE /* RoundButton.swift */; };
 		DF2BFD7D2030ABA700E3AB0C /* News+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2BFD7B2030ABA700E3AB0C /* News+CoreDataClass.swift */; };
 		DF2BFD7E2030ABA700E3AB0C /* News+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2BFD7C2030ABA700E3AB0C /* News+CoreDataProperties.swift */; };
 		DF2BFD802030DB6C00E3AB0C /* HomeNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2BFD7F2030DB6C00E3AB0C /* HomeNewsViewController.swift */; };
@@ -65,6 +66,7 @@
 		BE796D0F1FB9D44000A85234 /* SourcesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourcesViewController.swift; sourceTree = "<group>"; };
 		BE796D111FB9D9A200A85234 /* SourceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceCell.swift; sourceTree = "<group>"; };
 		DF1C921F202FEF3300385521 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		DF2BC63120439B3E001E45CE /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		DF2BFD7B2030ABA700E3AB0C /* News+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "News+CoreDataClass.swift"; sourceTree = "<group>"; };
 		DF2BFD7C2030ABA700E3AB0C /* News+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "News+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		DF2BFD7F2030DB6C00E3AB0C /* HomeNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNewsViewController.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 		BE3039E61FB5FEF70006CA59 /* iCatchUp */ = {
 			isa = PBXGroup;
 			children = (
+				DF2BC63020439B12001E45CE /* Cumstons */,
 				DFF7EE94202F6EF200D3ED1A /* CoreData */,
 				BE303A3E1FB60BC90006CA59 /* Resource */,
 				BE303A391FB6074F0006CA59 /* Network */,
@@ -180,6 +183,14 @@
 				0E96C64BA6A9475F11E0CFA7 /* Pods_iCatchUp.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DF2BC63020439B12001E45CE /* Cumstons */ = {
+			isa = PBXGroup;
+			children = (
+				DF2BC63120439B3E001E45CE /* RoundButton.swift */,
+			);
+			path = Cumstons;
 			sourceTree = "<group>";
 		};
 		DFF7EE94202F6EF200D3ED1A /* CoreData */ = {
@@ -331,6 +342,7 @@
 				BE796D101FB9D44000A85234 /* SourcesViewController.swift in Sources */,
 				BE3039F01FB5FEF70006CA59 /* iCatchUp.xcdatamodeld in Sources */,
 				BE3039E81FB5FEF70006CA59 /* AppDelegate.swift in Sources */,
+				DF2BC63220439B3E001E45CE /* RoundButton.swift in Sources */,
 				DFD9261E203389F700E069FD /* TabBarViewController.swift in Sources */,
 				DF5ADD6320329B8B001F33E5 /* ArticleDetailViewController.swift in Sources */,
 				DF2BFD822030DB9300E3AB0C /* NewsCell.swift in Sources */,
@@ -484,7 +496,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8468U436K8;
+				DEVELOPMENT_TEAM = F92U2Z3V78;
 				INFOPLIST_FILE = iCatchUp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pe.edu.upc.iCatchUp;
@@ -501,7 +513,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8468U436K8;
+				DEVELOPMENT_TEAM = F92U2Z3V78;
 				INFOPLIST_FILE = iCatchUp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pe.edu.upc.iCatchUp;

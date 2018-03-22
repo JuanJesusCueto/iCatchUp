@@ -89,7 +89,7 @@ extension HomeNewsViewController {
             "apiKey":"fecf4feeffa64e4da682e7d268612ce5",
             ]
         
-        //Update the velues from TabBarController
+        //Update the values from TabBarController
         if let tabBarController = self.storyboard?.instantiateViewController(withIdentifier: "TabBarViewController") as? TabBarViewController {
             newsValues = tabBarController.getParameters()
         }
